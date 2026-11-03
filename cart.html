@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping Cart & Checkout | Profitable Tulip</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,137 +14,50 @@
     <nav class="nav-container">
       <a href="index.html" class="logo-link">
         <div class="logo">
-          <img src="logo.png" alt="Profitable Tulip Logo" class="brand-logo-img">
+          <img src="logo.png" alt="Logo" class="brand-logo-img">
           <h2>Profitable Tulip</h2>
         </div>
       </a>
-
-      <!-- Mobile Menu Hamburger Button -->
-      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <div class="nav-links" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="services.html">Services Hub</a>
-        <a href="cart.html" class="active">Cart 🛒</a>
-        <a href="https://wa.me/923230297971?text=I%20want%20to%20know%20more%20About%20Us" target="_blank">About Us</a>
-      </div>
-
-      <div class="header-actions">
-        <div class="rating-badge">🛒 Cart (1)</div>
-        <a href="https://wa.me/923230297971?text=I%20want%20to%20Proceed%20to%20Checkout" target="_blank" class="btn-primary">Checkout ⚡</a>
+        <a href="cart.html" class="active">Cart <span id="cart-counter" class="cart-count-badge">0</span>🛒</a>
       </div>
     </nav>
   </header>
 
-  <main id="main">
-    
-    <!-- Page Header Section -->
-    <section class="hero-section" style="padding-bottom: 2rem;">
-      <div class="hero-content">
-        <div class="hero-badge">🛒 Secure Order & Checkout Flow</div>
-        <h1 class="hero-flip-title" style="font-size: 2.8rem;">
-          Your Shopping <br>
-          <span style="background: linear-gradient(135deg, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cart & Summary</span>
-        </h1>
-        <p>Review your selected digital marketing packages and complete your secure checkout instantly via WhatsApp.</p>
-      </div>
-    </section>
+  <main id="main" style="max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem;">
+    <div class="section-header">
+      <span class="sub-title">SECURE ORDER REVIEW</span>
+      <h2>Your Shopping Cart</h2>
+    </div>
 
-    <!-- Cart & Checkout Container -->
-    <section class="pricing-section" style="margin-top: 1rem;">
-      <div class="pricing-grid" style="grid-template-columns: 2fr 1.2fr; gap: 2rem; align-items: flex-start;">
-        
-        <!-- Left Column: Cart Items List -->
-        <div class="price-card" style="text-align: left;">
-          <div class="card-tag">SELECTED ITEMS</div>
-          <h3>Your Cart Items</h3>
-          
-          <div style="margin: 1.5rem 0; border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.3rem;">📱 Instagram Growth Package</h4>
-              <p style="color: var(--text-gray); font-size: 0.85rem;">Followers, Non-Drop Likes & Reels Views</p>
-            </div>
-            <div style="text-align: right;">
-              <span style="color: var(--primary-glow); font-weight: 700; font-size: 1.1rem;">Custom / Active</span>
-            </div>
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="services.html" class="card-btn" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.85rem;">← Add More Services</a>
-            <a href="services.html" style="color: #ef4444; font-size: 0.85rem; text-decoration: none; font-weight: 600;">Clear Cart</a>
-          </div>
+    <div class="pricing-grid" style="grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: flex-start;">
+      
+      <!-- Cart Items List -->
+      <div class="price-card" style="text-align: left;">
+        <h3>Selected Services</h3>
+        <div id="cart-items-container" style="margin: 1.5rem 0;">
+          <!-- Dynamic JS will inject items here -->
         </div>
-
-        <!-- Right Column: Checkout Form & Summary -->
-        <div class="price-card featured" style="text-align: left;">
-          <div class="card-tag popular">SECURE CHECKOUT</div>
-          <h3>Order Details</h3>
-          
-          <form style="margin: 1.5rem 0;" onsubmit="event.preventDefault(); alert('Redirecting to WhatsApp Checkout...');">
-            <div style="margin-bottom: 1.2rem;">
-              <label style="display: block; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.4rem;">Your Name / Brand Name</label>
-              <input type="text" placeholder="e.g. Profitable Tulip" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 0.8rem 1rem; border-radius: 12px; color: #fff; outline: none;">
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-              <label style="display: block; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 0.4rem;">Social Media Link / Username</label>
-              <input type="text" placeholder="e.g. @instagram_handle" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 0.8rem 1rem; border-radius: 12px; color: #fff; outline: none;">
-            </div>
-
-            <a href="https://wa.me/923230297971?text=Hello%20Profitable%20Tulip,%20I%20want%20to%20complete%20my%20checkout%20for%20the%20items%20in%20my%20cart." target="_blank" class="card-btn primary" style="text-align: center; width: 100%; padding: 1rem; font-size: 1rem;">
-              💬 Proceed to WhatsApp Checkout ⚡
-            </a>
-          </form>
-          
-          <p style="color: var(--text-gray); font-size: 0.78rem; text-align: center; margin-top: 1rem;">🔒 100% Safe & Secure. Direct agent coordination.</p>
-        </div>
-
+        <button onclick="clearCart()" style="background: #ef4444; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;">Clear Cart</button>
       </div>
-    </section>
+
+      <!-- Checkout Form -->
+      <div class="price-card featured" style="text-align: left;">
+        <h3>Client Details</h3>
+        <form id="checkout-form" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" id="client-name" placeholder="Your Name / Brand" required style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 0.8rem; border-radius: 10px; color: #fff; outline: none;">
+          <input type="text" id="client-handle" placeholder="Social Link / Handle" required style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 0.8rem; border-radius: 10px; color: #fff; outline: none;">
+          
+          <button type="button" onclick="checkoutWhatsApp()" class="card-btn primary" style="padding: 1rem; cursor: pointer; border: none; width: 100%;">
+            💬 Send Order to WhatsApp ⚡
+          </button>
+        </form>
+      </div>
+
+    </div>
   </main>
-
-  <!-- Footer -->
-  <footer class="modern-footer">
-    <div class="footer-container">
-      <div class="footer-brand-col">
-        <div class="footer-logo">
-          <img src="logo.png" alt="Logo" class="footer-logo-img">
-          <h2>Profitable Tulip<span class="dot">.</span></h2>
-        </div>
-        <p>Your ultimate destination for 100% trusted, lifetime non-drop social media growth and professional digital marketing solutions.</p>
-      </div>
-
-      <div class="footer-links-col">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services Hub</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="https://wa.me/923230297971" target="_blank">About Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact-col">
-        <h3>Direct Contact</h3>
-        <p class="footer-desc">Have questions? DM us instantly on WhatsApp:</p>
-        <div class="footer-whatsapp-box">
-          <a href="https://wa.me/923230297971" target="_blank" class="footer-wa-link">💬 0323-0297971</a>
-          <a href="https://wa.me/923365888383" target="_blank" class="footer-wa-link">💬 0336-5888383</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-bottom-container">
-        <p>&copy; 2026 Profitable Tulip. All rights reserved.</p>
-        <p class="designer-credit">Designed for Excellence & Fast Growth</p>
-      </div>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
