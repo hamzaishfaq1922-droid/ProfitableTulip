@@ -953,7 +953,7 @@ html {
 
 /* Hero Video / Mockup Container Size Fix */
 .interactive-mockup-wrapper {
-  max-width: 420px !important; /* Yeh video card ko medium aur compact size dega */
+  max-width: 220px !important; /* Yeh video card ko medium aur compact size dega */
   margin: 3rem auto 0 auto !important;
   text-align: center;
 }
