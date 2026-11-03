@@ -341,18 +341,6 @@ header {
 .mockup-stats div strong { display: block; font-size: 1rem; color: #fff; }
 .mockup-stats div span { font-size: 0.75rem; color: var(--text-gray); }
 
-.floating-element {
-  position: absolute;
-  font-size: 2.2rem;
-  z-index: 10;
-  pointer-events: none;
-  transition: transform 0.1s ease-out;
-}
-.shape-1 { top: -20px; left: -40px; }
-.heart-1 { top: 10px; right: -40px; }
-.shape-2 { bottom: 60px; left: -50px; }
-.heart-2 { bottom: 70px; right: -50px; }
-
 .growth-input-box {
   margin-top: 2rem;
   background: rgba(24, 26, 38, 0.9);
