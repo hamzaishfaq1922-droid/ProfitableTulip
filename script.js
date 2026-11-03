@@ -51,3 +51,88 @@ if (mobileMenuBtn && navMenu) {
     }
   });
 }
+// Add to Cart Function
+function addToCart(serviceName) {
+  let cart = JSON.parse(localStorage.getItem('tulipCart')) || [];
+  cart.push(serviceName);
+  localStorage.setItem('tulipCart', JSON.stringify(cart));
+  alert(`✅ "${serviceName}" has been added to your cart!`);
+  updateCartCounters();
+}
+
+// Update Counters on Load
+function updateCartCounters() {
+  let cart = JSON.parse(localStorage.getItem('tulipCart')) || [];
+  document.querySelectorAll('#cart-counter, #cart-counter-2').forEach(el => {
+    if(el) el.innerText = cart.length;
+  });
+}
+
+// Load Cart Items in cart.html
+function loadCartPage() {
+  let container = document.getElementById('cart-items-container');
+  if(!container) return;
+  
+  let cart = JSON.parse(localStorage.getItem('tulipCart')) || [];
+  if(cart.length === 0) {
+    container.innerHTML = `<p style="color: var(--text-gray);">Your cart is empty. <a href="services.html" style="color: var(--primary-glow);">Browse Services</a></p>`;
+    return;
+  }
+
+  let html = '';
+  cart.forEach((item, index) => {
+    html += `
+      <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 0.8rem; border-radius: 10px; margin-bottom: 0.8rem;">
+        <span style="color: #fff; font-weight: 600;">${index + 1}. ${item}</span>
+        <button onclick="removeItem(${index})" style="background: transparent; border: none; color: #ef4444; cursor: pointer;">❌</button>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+}
+
+// Remove Single Item
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem('tulipCart')) || [];
+  cart.splice(index, 1);
+  localStorage.setItem('tulipCart', JSON.stringify(cart));
+  loadCartPage();
+  updateCartCounters();
+}
+
+// Clear Entire Cart
+function clearCart() {
+  localStorage.removeItem('tulipCart');
+  loadCartPage();
+  updateCartCounters();
+}
+
+// WhatsApp Checkout
+function checkoutWhatsApp() {
+  let name = document.getElementById('client-name').value;
+  let handle = document.getElementById('client-handle').value;
+  let cart = JSON.parse(localStorage.getItem('tulipCart')) || [];
+
+  if(!name || !handle) {
+    alert('Please fill in your Name and Social Link!');
+    return;
+  }
+  if(cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+
+  let message = `Hello Profitable Tulip! New Order:%0A*Name:* ${name}%0A*Handle:* ${handle}%0A*Selected Services:*%0A`;
+  cart.forEach((item, i) => {
+    message += `${i+1}. ${item}%0A`;
+  });
+
+  let url = `https://wa.me/923230297971?text=${message}`;
+  window.open(url, '_blank');
+}
+
+// Run on page load
+window.onload = function() {
+  updateCartCounters();
+  loadCartPage();
+};
