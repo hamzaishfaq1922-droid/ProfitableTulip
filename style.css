@@ -951,19 +951,24 @@ html {
   }
 }
 
-/* Scroll Parallax effect logic for Interactive Mockup */
+/* Hero Video / Mockup Container Size Fix */
 .interactive-mockup-wrapper {
-  transition: transform 0.3s ease-out;
+  max-width: 420px !important; /* Yeh video card ko medium aur compact size dega */
+  margin: 3rem auto 0 auto !important;
+  text-align: center;
 }
 
-.interactive-mockup-wrapper:hover {
-  transform: translateY(-5px);
+.phone-mockup-card {
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
 }
-@media (max-width: 600px) {
-  .poster-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .poster-img-wrapper {
-    height: 350px;
-  }
+
+.phone-mockup-card video {
+  width: 100%;
+  height: auto;
+  max-height: 380px; /* Video ki height ko control karne ke liye */
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
 }
